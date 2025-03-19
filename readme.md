@@ -2,7 +2,7 @@
 
 in this repo you'll find a server provisioning script that updates, upgrades, and configures an ubuntu linux server.
 
-![You Just Created A New Ubuntu Linux Server, Now What!?](imagery/cover.png)
+![You Just Created A New Ubuntu Linux Server, Now What!?](cover.png)
 
 So you've just created a new ubuntu linux server.
 
