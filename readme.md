@@ -1,4 +1,4 @@
-# You Just Created A New Ubuntu Linux Server, Now What!?
+# Basic Setup Of An Ubuntu Linux Server
 
 in this repo you'll find a server provisioning script that updates, upgrades, and configures an ubuntu linux server.
 
@@ -48,13 +48,13 @@ Log in to your linux server.
 Clone (download) this git repo to save locally onto your linux server.
 
 ```bash
-git clone https://github.com/softwareshinobi/provision-new-ubuntu-server.git
+git clone https://github.com/softwareshinobi/provision-ubuntu-linux-server.git
 ```
 
 You'll see output that looks similar to this:
 
 ```
-Cloning into 'provision-new-ubuntu-server'...
+Cloning into 'provision-ubuntu-linux-server'...
 remote: Enumerating objects: 120, done.
 remote: Counting objects: 100% (120/120), done.
 remote: Compressing objects: 100% (91/91), done.
@@ -74,7 +74,7 @@ ls -lha . | grep provision
 You are looking for something like this:
 
 ```
-drwxrwxr-x  4 softwareshinobi softwareshinobi 4,0K mar 19 08:14 provision-new-ubuntu-server
+drwxrwxr-x  4 softwareshinobi softwareshinobi 4,0K mar 19 08:14 provision-ubuntu-linux-server
 ```
 
 ### Step 4 / Navigate To Script
@@ -82,7 +82,7 @@ drwxrwxr-x  4 softwareshinobi softwareshinobi 4,0K mar 19 08:14 provision-new-ub
 So now let's run the script. Change directories into the downloaded directory.
 
 ```bash
-cd provision-new-ubuntu-server
+cd provision-ubuntu-linux-server
 ```
 
 Verify you are in the correct directory
@@ -94,7 +94,7 @@ pwd
 You are looking for an output similar to this
 
 ```
-/home/ubuntu/provision-new-ubuntu-server
+/home/ubuntu/provision-ubuntu-linux-server
 ```
 
 ### Step 5 / Execute Script
