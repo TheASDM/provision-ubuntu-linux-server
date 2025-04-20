@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ##
 ## this is a simple bash script to install basic server config
 ##
@@ -7,7 +6,6 @@
 ##
 ##     Overview: update and upgrade the system, install troubleshooting tools, vim, and docker compose
 ##
-
 ##
 
 set -e
@@ -69,14 +67,50 @@ echo \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 ## docker engine install
-
 sudo apt update
-
 sudo apt purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-compose docker docker.io
-
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
 sudo docker run hello-world
 
-echo "finished provision..."
+## chatgpts favorites
+sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release \
+    software-properties-common \
+    unzip \
+    zip \
+    net-tools \
+    dnsutils \
+    git \
+    htop \
+    tmux \
+    fail2ban \
+    ufw \
+    jq \
+    socat \
+    python3 \
+    python3-pip
 
+## Docker Start on startup
+ sudo systemctl enable docker.service
+ sudo systemctl enable containerd.service
+
+## Add user to docker group
+sudo usermod -aG docker $USER
+
+# portainer install
+
+docker volume create portainer_data
+sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts
+
+## Make filebrowser directory
+cd ~
+sudo mkdir docker
+cd docker
+sudo mkdir filebrowser
+echo "finished provision..."
+## Now go to the server-starter-stack in portainer
+sudo reboot
